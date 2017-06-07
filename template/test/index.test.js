@@ -15,9 +15,10 @@ function getSample () {
 
 test(`sends a response`, (t) => {
   const request = sinon.stub()
-  const response = sinon.spy()
+  const response = {
+    send: sinon.spy()
+  }
   const sample = getSample()
   sample.program.{{FUNCTION_NAME}}(request, response)
-  sample.program.deploy_complete(response, response);
-  response.send.calledWith("hello world")
+  t.true(response.send.calledWith(`hello world`))
 });

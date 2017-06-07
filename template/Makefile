@@ -6,7 +6,8 @@ FUNCTION_MEMORY ?= {{ FUNCTION_MEMORY }}
 deploy: __set-project __ensure-bucket __env __deploy-only ## Deploy function to production
 
 test:
-	echo "write a test"
+	@npm install
+	@npm test
 
 help:
 	@echo Public targets:

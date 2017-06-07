@@ -22,6 +22,14 @@ $ porteurbars meetup/http-cloud-function
 
 `FUNCTION_MEMORY` values must be one of `28MB`, `256MB`, `512MB`, `1024MB` and `2048MB`.
 
+## testing
+
+This template provides a default test harness. You can run tests with the following
+
+```bash
+$ make test
+```
+
 ## impress your friends
 
 ```bash
