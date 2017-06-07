@@ -1,8 +1,5 @@
-var yaml = require('js-yaml');
-var fs = require('fs');
+require('dotenv').config()
 
-var secrets = yaml.safeLoad(fs.readFileSync('secrets.yaml', 'utf8'))
-
-exports.{{ FUNCTION_NAME }} = function (req, res) {
+export const FUNCTION_NAME = (req, res) =>
   res.send('func');
 };

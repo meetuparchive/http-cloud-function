@@ -4,6 +4,7 @@ language: bash
 cache:
   pip: true
   directories:
+    - node_modules
     - "$HOME/google-cloud-sdk/"
 
 # Only build pushes to master.
@@ -33,6 +34,9 @@ before_install:
   # Authenticate GCloud
   - echo $GCP_SECRET > client-secret.json
   - gcloud auth activate-service-account --key-file client-secret.json
+
+script:
+  make test
 
 deploy:
   - provider: script

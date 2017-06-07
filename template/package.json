@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "js-yaml": "3.6.1"
+    "dotenv": "4.0.0 "
   }
 }
