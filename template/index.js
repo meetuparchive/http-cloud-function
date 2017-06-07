@@ -1,5 +1,5 @@
 require('dotenv').config()
 
-export const FUNCTION_NAME = (req, res) =>
+module.exports.{{ FUNCTION_NAME }} = (req, res) =>
   res.send('func');
 };
