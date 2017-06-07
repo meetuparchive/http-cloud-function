@@ -15,7 +15,7 @@ help:
 	@grep -E '^__[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[35m%-20s\033[0m %s\n", $$1, $$2}'
 
 __deploy-only: ## Deploy function
-	gcloud beta functions \
+	@gcloud beta functions \
 	  deploy $(FUNCTION_NAME) \
 		--stage-bucket $(STAGE_BUCKET) \
 		--memory $(FUNCTION_MEMORY) \
@@ -28,4 +28,4 @@ __set-project: ## Sets gcp project in context
 	@gcloud config set project $(GCP_PROJECT)
 
 __env: ## Create env file
-	envtpl < .env.tmpl > .env
+	@envtpl < .env.tmpl > .env

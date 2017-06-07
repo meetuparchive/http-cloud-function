@@ -1,5 +1,5 @@
 require('dotenv').config()
 
-module.exports.{{ FUNCTION_NAME }} = (req, res) =>
-  res.send('func');
-};
+module.exports.{{ FUNCTION_NAME }} = (req, res) => {
+  res.send('hello world')
+}
