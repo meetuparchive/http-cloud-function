@@ -30,3 +30,5 @@ __set-project: ## Sets gcp project in context
 
 __env: ## Create env file
 	@envtpl < .env.tmpl > .env
+
+.PHONY: test
