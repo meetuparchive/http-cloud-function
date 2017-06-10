@@ -2,6 +2,8 @@
 
 > a [porteurbars](https://github.com/softprops/porteurbars) template for generating http triggered google cloud functions, bootstrapped for travis integration for continuous git push based deployments
 
+![demo.gif](demo.gif)
+
 ## usage
 
 The following should promote you for the following values
