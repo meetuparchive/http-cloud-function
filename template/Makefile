@@ -2,12 +2,16 @@ GCP_PROJECT ?= {{ GCP_PROJECT }}
 STAGE_BUCKET ?= {{ STAGE_BUCKET }}
 FUNCTION_NAME ?= {{ FUNCTION_NAME }}
 FUNCTION_MEMORY ?= {{ FUNCTION_MEMORY }}
+CI_WORKDIR ?= $(shell pwd)
 
-deploy: __set-project __ensure-bucket __env __deploy-only ## Deploy function to production
+deploy: __set-project __ensure-bucket __ensure-bucket __env __deploy-only ## Deploy function to production
 
-test:
-	@npm install
-	@npm test
+test: ## Run function tests
+	@docker run -it --rm \
+		-v $(CI_WORKDIR):/usr/src/app \
+		-w /usr/src/app \
+		mhart/alpine-node:6.10 \
+		sh -c "npm install --quiet && npm test"
 
 help:
 	@echo Public targets:
