@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "dotenv": "4.0.0 "
+    "dotenv": "4.0.0"
   },
   "scripts": {
     "test": "ava -T 20s --verbose test/*.test.js"
